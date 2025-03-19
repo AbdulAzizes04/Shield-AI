@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0d0d0d;
+    color: white;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.chat-app {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #1e1e1e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 0px 10px rgba(0, 255, 0, 0.2);
+    text-align: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow:hidden;
+}
+
+.logo-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00FFFF;
+    text-align: center;
+}
+
+
+.about-btn, .settings-btn {
+    background: #00FFFF;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.about-btn:hover, .settings-btn:hover {
+    background: #00CED1;
+}
+
+/* Chat Section */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #121212;
+    padding: 15px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 60px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Message Styling */
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.user-message {
+    align-self: flex-end;
+    background: #00FFFF;
+    color: black;
+    border-top-right-radius: 0;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: #292929;
+    border-top-left-radius: 0;
+}
+
+/* Typing Animation */
+.typing-animation {
+    align-self: flex-start;
+    padding: 10px;
+    font-style: italic;
+    color: #ccc;
+    display: flex;
+    gap: 5px;
+}
+
+.typing-animation span {
+    width: 5px;
+    height: 5px;
+    background: #00FFFF;
+    border-radius: 50%;
+    animation: blink 1s infinite alternate;
+}
+
+.typing-animation span:nth-child(2) { animation-delay: 0.2s; }
+.typing-animation span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+/* Chat Input */
+.chat-input {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 250px);
+    left: 250px;
+    background: #292929;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+}
+
+.chat-input input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+.chat-input button {
+    border: none;
+    background: #00FFFF;
+    color: black;
+    padding: 10px 15px;
+    margin-left: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* Settings Section */
+.settings-section {
+    display: none;
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.2);
+}
+
+.theme-btn, .login-btn {
+    width: 100%;
+    background: #00FFFF;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+.theme-btn:hover, .login-btn:hover {
+    background: #00CED1;
+}
+
+
+.chat-input button:hover {
+    background: #00CED1;
+}
